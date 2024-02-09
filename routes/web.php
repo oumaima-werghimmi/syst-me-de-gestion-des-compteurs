@@ -28,6 +28,8 @@ Route::resource('invoices', 'InvoicesController');
 
 Route::match(['get', 'patch'], 'invoices/edit/{idinvoice}', 'InvoicesController@edit')->name('invoices.edit');
 
+Route::post('populateCounterData', 'InvoicesController@populateCounterData')->name('populateCounterData');
+
 
 Route::patch('invoices/edit/{idinvoice}', 'InvoicesController@update')->name('invoices.update');
 
@@ -37,13 +39,8 @@ Route::get('Invoice_UnPaid','InvoicesController@Invoice_UnPaid');
 
 Route::get('Other','InvoicesController@Other');
 
-//Route::get('Print_invoice/{idinvoice}', 'InvoicesController@printInvoice');
 
 Route::get('invoices/printInvoice/{idinvoice}', 'InvoicesController@printInvoice')->name('invoices.printInvoice');
-
-
-
-
 
 
 Route::resource('districts', 'DistrictController');
@@ -79,3 +76,18 @@ Route::get('unreadNotifications_count', 'InvoicesController@unreadNotifications_
 Route::get('unreadNotifications', 'InvoicesController@unreadNotifications')->name('unreadNotifications');
 
 Route::get('/{page}', 'AdminController@index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Route::get('Print_invoice/{idinvoice}', 'InvoicesController@printInvoice');
